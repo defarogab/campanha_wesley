@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wesley Teixeira | Da Periferia para a ALERJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1B2D5B;
+      --green: #3BB554;
+      --orange: #F5841F;
+      --light-green: #e8f7eb;
+      --light-bg: #f7f8fa;
+      --text: #1a1a1a;
+      --muted: #555;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    nav a.btn-nav {
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: opacity .2s;
+    }
+
+    nav a.btn-nav:hover { opacity: .85; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a4a8a 100%);
+      color: #fff;
+      padding: 80px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span { color: var(--green); }
+
+    .hero p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.85);
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      margin-top: 32px;
+    }
+
+    .btn-hero {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: opacity .2s, transform .2s;
+    }
+
+    .btn-hero:hover { opacity: .88; transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 8px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--green);
+    }
+
+    .stat span {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,.7);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    /* ── HERO PHOTO ── */
+    .hero-photo {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .hero-photo-crop {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.4);
+    }
+
+    .hero-photo-crop img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #dde2ec;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text);
+      transition: border-color .2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--green);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover { background: #2ea044; }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #999;
+      margin-top: 12px;
+    }
+
+    /* ── SOBRE ── */
+    .sobre {
+      background: var(--light-bg);
+      padding: 80px 24px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--light-green);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-title span { color: var(--green); }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .sobre-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .sobre-text strong { color: var(--navy); }
+
+    .sobre-conquistas {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .conquista-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--green);
+    }
+
+    .conquista-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .conquista-item strong {
+      display: block;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+
+    .conquista-item span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── PROPOSTAS ── */
+    .propostas {
+      padding: 80px 24px;
+      background: #fff;
+    }
+
+    .propostas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .proposta-card {
+      border-radius: 16px;
+      padding: 32px 28px;
+      border: 2px solid #eef0f5;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .proposta-card:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+    }
+
+    .proposta-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--light-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .proposta-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .proposta-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .proposta-card ul li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .proposta-card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    /* ── ACOMPANHE ── */
+    .acompanhe {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e3a7a 100%);
+      padding: 80px 24px;
+    }
+
+    .acompanhe-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .acompanhe-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .acompanhe-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .acompanhe-bullet-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .acompanhe-bullet strong {
+      display: block;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+
+    .acompanhe-bullet span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.5;
+    }
+
+    .acompanhe-form-card {
+      background: var(--light-bg);
+      border-radius: 20px;
+      padding: 40px 36px;
+      border: 2px solid #eef0f5;
+    }
+
+    .acompanhe-form-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .acompanhe-form-card > p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .btn-submit-green {
+      width: 100%;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: 8px;
+    }
+
+    .btn-submit-green:hover { background: #142248; }
+
+    /* Acompanhe no fundo escuro */
+    .acompanhe .section-tag { background: rgba(255,255,255,.12); color: rgba(255,255,255,.8); }
+    .acompanhe .section-tag::before { background: rgba(255,255,255,.8); }
+    .acompanhe .section-title { color: #fff; }
+    .acompanhe .section-title span { color: var(--green); }
+    .acompanhe .section-title::after { background: linear-gradient(90deg, var(--green), var(--orange)); }
+    .acompanhe .section-subtitle { color: rgba(255,255,255,.65); }
+    .acompanhe .btn-submit-green { background: var(--green); }
+    .acompanhe .btn-submit-green:hover { background: #2ea044; }
+
+    @media (max-width: 900px) {
+      .acompanhe-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── CONTRIBUIR ── */
+    .contribuir {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a4a8a 100%);
+      padding: 80px 24px;
+      color: #fff;
+    }
+
+    .contribuir .section-title { color: #fff; }
+    .contribuir .section-subtitle { color: rgba(255,255,255,.75); }
+
+    .contribuir-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .contribuir-item {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 12px;
+      padding: 24px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contribuir-num {
+      background: var(--orange);
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.9rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contribuir-item strong {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .contribuir-item p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.5;
+    }
+
+    /* ── FORM COMPLETO ── */
+    .form-section {
+      background: var(--light-bg);
+      padding: 80px 24px;
+    }
+
+    .form-full {
+      max-width: 680px;
+      margin: 48px auto 0;
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: 0 8px 40px rgba(0,0,0,.08);
+    }
+
+    .form-full h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .form-full > p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contribuicoes-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .contribuicoes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .check-item input[type="checkbox"] {
+      accent-color: var(--green);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    /* ── SUCCESS ── */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 32px 0 8px;
+    }
+
+    .success-msg .check-big { font-size: 3rem; margin-bottom: 12px; }
+    .success-msg h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 8px; }
+    .success-msg p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.82rem;
+    }
+
+    footer strong { color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-photo { justify-content: flex-start; }
+      .hero-photo img { max-width: 100%; max-height: 420px; width: 100%; object-fit: cover; }
+      .sobre-grid { grid-template-columns: 1fr; }
+      .propostas-grid { grid-template-columns: 1fr; }
+      .contribuir-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contribuicoes-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .section-title { font-size: 1.6rem; }
+      .form-full { padding: 28px 20px; }
+      .contribuir-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-wrap: wrap; gap: 16px; }
+    }
+
+    /* ── SCROLL PROGRESS BAR ── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--orange));
+      z-index: 999;
+      width: 0%;
+      transition: width 0.08s linear;
+    }
+
+    /* ── NAV SCROLL SHADOW ── */
+    nav { transition: box-shadow .3s; }
+    nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,.35); }
+
+    /* ── HERO CANVAS ── */
+    #hero-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      opacity: 0.75;
+    }
+    .hero { position: relative; overflow: hidden; }
+    .hero-inner { position: relative; z-index: 1; }
+
+    /* ── HERO PHOTO FLOAT (removido) ── */
+
+    /* ── HERO BUTTON PULSE ── */
+    @keyframes pulse-btn {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245,132,31,.55); }
+      60%       { box-shadow: 0 0 0 14px rgba(245,132,31,0); }
+    }
+    .btn-hero { animation: pulse-btn 2.6s infinite; }
+
+    /* ── REVEAL ON SCROLL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: .1s; }
+    .reveal-d2 { transition-delay: .2s; }
+    .reveal-d3 { transition-delay: .3s; }
+    .reveal-d4 { transition-delay: .4s; }
+    .reveal-d5 { transition-delay: .5s; }
+
+    /* ── ENHANCED CARD HOVER ── */
+    .proposta-card:hover {
+      border-color: var(--green);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(59,181,84,.15);
+    }
+
+    /* ── CONQUISTA HOVER ── */
+    .conquista-item {
+      transition: transform .25s, box-shadow .25s;
+      cursor: default;
+    }
+    .conquista-item:hover {
+      transform: translateX(8px);
+      box-shadow: 4px 4px 20px rgba(27,45,91,.12);
+    }
+
+    /* ── CONTRIBUIR ITEM HOVER ── */
+    .contribuir-item {
+      transition: background .3s, transform .25s, border-color .3s;
+      cursor: default;
+    }
+    .contribuir-item:hover {
+      background: rgba(255,255,255,.16);
+      border-color: rgba(255,255,255,.35);
+      transform: translateY(-4px);
+    }
+
+    /* ── ACOMPANHE BULLET HOVER ── */
+    .acompanhe-bullet {
+      transition: transform .2s;
+    }
+    .acompanhe-bullet:hover { transform: translateX(6px); }
+
+    /* ════════════════════════════════
+       REDESIGN CRIATIVO
+    ════════════════════════════════ */
+
+    /* NAV: glassmorphism */
+    nav {
+      background: rgba(15, 24, 60, 0.88) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 3px solid var(--green);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* HERO: grade de pontos no fundo */
+    .hero-dot-grid {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* HERO: base reta */
+    .hero {
+      clip-path: none;
+      padding-bottom: 80px;
+    }
+
+    /* HERO: texto gradiente no span da h1 */
+    .hero h1 span {
+      background: linear-gradient(135deg, #4fd46a 0%, #a8f0b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* HERO: stats maiores com separador */
+    .hero-stats {
+      gap: 0;
+      margin-top: 24px;
+    }
+    .stat {
+      padding: 8px 28px;
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
+    .stat:first-child { padding-left: 0; }
+    .stat:last-child  { border-right: none; }
+    .stat strong {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #4fd46a, #c8f7d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-variant-numeric: tabular-nums;
+      display: block;
+      min-width: 5ch;
+    }
+
+    /* HERO: tag typewriter cursor */
+    .hero-tag::after {
+      content: '|';
+      animation: blink .75s step-end infinite;
+      margin-left: 1px;
+    }
+    .hero-tag.typed::after { display: none; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* SECTION TAG: ponto decorativo */
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* SECTION TITLE: barra gradiente */
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 52px;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--green), var(--orange));
+      margin-top: 14px;
+    }
+    .form-section .section-title::after,
+    .contribuir  .section-title::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contribuir .section-title::after {
+      background: linear-gradient(90deg, rgba(255,255,255,.6), rgba(255,255,255,.1));
+    }
+
+    /* PROPOSTA CARD: barra gradiente no topo ao hover */
+    .proposta-card { overflow: hidden; }
+    .proposta-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--orange));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s ease;
+    }
+    .proposta-card { position: relative; }
+    .proposta-card:hover::before { transform: scaleX(1); }
+    .proposta-card:hover {
+      box-shadow: 0 24px 60px rgba(59,181,84,.18), 0 4px 18px rgba(0,0,0,.06);
+    }
+
+    /* PROPOSTA ICON: gradiente */
+    .proposta-icon {
+      background: linear-gradient(135deg, var(--light-green), #c8f7d0);
+      transition: transform .3s;
+    }
+    .proposta-card:hover .proposta-icon { transform: scale(1.12) rotate(-4deg); }
+
+    /* CONQUISTAS: linha de timeline */
+    .sobre-conquistas { position: relative; }
+    .sobre-conquistas::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--green) 0%, rgba(59,181,84,.08) 100%);
+      pointer-events: none;
+    }
+
+    /* CONTRIBUIR NUM: glow pulsante */
+    .contribuir-num {
+      transition: box-shadow .3s, transform .3s;
+    }
+    .contribuir-item:hover .contribuir-num {
+      box-shadow: 0 0 0 8px rgba(245,132,31,.2), 0 0 24px rgba(245,132,31,.5);
+      transform: scale(1.1);
+    }
+
+    /* ── MANIFESTO SECTION ── */
+    .manifesto {
+      background: #080f28;
+      padding: 110px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .manifesto-noise {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(ellipse 80% 60% at 50% 50%,
+        rgba(59,181,84,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .manifesto-bg-word {
+      position: absolute;
+      font-size: clamp(100px, 22vw, 240px);
+      font-weight: 900;
+      color: rgba(255,255,255,.028);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -6px;
+    }
+    .manifesto blockquote {
+      max-width: 840px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .manifesto-quote-mark {
+      display: block;
+      font-size: 5rem;
+      line-height: .8;
+      color: var(--green);
+      font-family: Georgia, serif;
+      margin-bottom: 8px;
+      opacity: .65;
+    }
+    .manifesto blockquote p {
+      font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 32px;
+    }
+    .manifesto blockquote p em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .manifesto blockquote cite {
+      font-size: 0.78rem;
+      font-style: normal;
+      color: rgba(255,255,255,.35);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* FORM SECTION: mais dramaticidade */
+    .form-section {
+      background: linear-gradient(160deg, #f0f4fa 0%, #e8f7eb 100%);
+    }
+    .form-full {
+      border: 1px solid rgba(59,181,84,.2);
+      box-shadow: 0 12px 60px rgba(27,45,91,.1);
+    }
+    .btn-submit {
+      background: linear-gradient(135deg, var(--green), #2ea044);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(59,181,84,.4);
+    }
+
+    /* FOOTER: linha gradiente no topo */
+    footer {
+      border-top: 3px solid transparent;
+      background: linear-gradient(var(--navy), var(--navy)) padding-box,
+                  linear-gradient(90deg, var(--green), var(--orange)) border-box;
+    }
+
+    /* ── INSTAGRAM SECTION ── */
+    .instagram {
+      background: #fff;
+      padding: 100px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .instagram-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 45% at 5% 50%, rgba(131,58,180,.07) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 45% at 95% 50%, rgba(245,132,31,.05) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .instagram-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .instagram-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+    .ig-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .ig-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .instagram-header .section-tag {
+      background: rgba(131,58,180,.2);
+      color: #d9a8ff;
+    }
+    .instagram-header .section-tag::before {
+      background: #d9a8ff;
+    }
+    .instagram-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .instagram-title span {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .instagram-handle-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .instagram-handle {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: .5px;
+    }
+    .instagram-handle strong {
+      color: var(--navy);
+    }
+    .ig-badge {
+      background: rgba(0,0,0,.05);
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .ig-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--light-bg);
+      border: 1.5px solid #eef0f5;
+      padding: 24px 20px;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+      cursor: default;
+    }
+    .ig-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(131,58,180,.4);
+      box-shadow: 0 12px 40px rgba(131,58,180,.1);
+    }
+    .ig-card-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .ig-card-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .ig-card h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .ig-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .ig-card-footer {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #eef0f5;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .ig-card-stat {
+      font-size: 0.72rem;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .instagram-cta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-instagram:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(131,58,180,.45);
+    }
+    .instagram-cta-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .ig-profile-pic {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 45%, #fcb045 100%);
+      box-shadow: 0 12px 48px rgba(131,58,180,.5), 0 4px 16px rgba(0,0,0,.3);
+      z-index: 2;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s;
+      text-decoration: none;
+    }
+    .ig-profile-pic:hover {
+      transform: scale(1.06);
+      box-shadow: 0 18px 56px rgba(131,58,180,.7), 0 4px 20px rgba(0,0,0,.35);
+    }
+    .ig-profile-pic img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 4px solid #fff;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .instagram-grid { grid-template-columns: 1fr 1fr; }
+      .ig-profile-pic { width: 140px; height: 140px; top: 0; right: 0; }
+    }
+    @media (max-width: 600px) {
+      .instagram-grid { grid-template-columns: 1fr; }
+      .instagram-cta { flex-direction: column; align-items: flex-start; }
+      .ig-profile-pic { width: 88px; height: 88px; top: 0; right: 0; }
+    }
+
+    /* ── DEPOIMENTOS ── */
+    .depoimentos {
+      background: linear-gradient(160deg, #f0f4fa 0%, #e8f7eb 100%);
+      padding: 100px 24px;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .depoimento-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px 32px 36px;
+      border: 1.5px solid #eef0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      position: relative;
+      transition: transform .35s, box-shadow .35s, border-color .35s;
+      box-shadow: 0 4px 24px rgba(27,45,91,.06);
+    }
+
+    .depoimento-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 28px 64px rgba(27,45,91,.13);
+      border-color: var(--green);
+    }
+
+    /* anel gradiente + foto */
+    .depoimento-foto-wrap {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      padding: 4px;
+      margin-bottom: 20px;
+      position: relative;
+      background: linear-gradient(135deg, var(--green), var(--navy));
+    }
+
+    .depoimento-card--lula     .depoimento-foto-wrap { background: linear-gradient(135deg, #1B2D5B, #3a5fbd); }
+    .depoimento-card--evaristo .depoimento-foto-wrap { background: linear-gradient(135deg, #3BB554, #1a8c36); }
+    .depoimento-card--paes     .depoimento-foto-wrap { background: linear-gradient(135deg, #F5841F, #d45f00); }
+
+    .depoimento-foto-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #c8d4e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid #fff;
+    }
+
+    .depoimento-foto-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      image-rendering: auto;
+    }
+
+    .depoimento-inicial {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .depoimento-autor-info {
+      margin-bottom: 20px;
+    }
+
+    .depoimento-autor-info strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .depoimento-autor-info span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    .depoimento-divider {
+      width: 40px;
+      height: 3px;
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
+
+    .depoimento-card--lula     .depoimento-divider { background: linear-gradient(90deg, #1B2D5B, #3a5fbd); }
+    .depoimento-card--evaristo .depoimento-divider { background: linear-gradient(90deg, #3BB554, #1a8c36); }
+    .depoimento-card--paes     .depoimento-divider { background: linear-gradient(90deg, #F5841F, #d45f00); }
+
+    .depoimento-aspas {
+      font-size: 3.5rem;
+      line-height: .7;
+      font-family: Georgia, serif;
+      opacity: .3;
+      user-select: none;
+      margin-bottom: 8px;
+    }
+
+    .depoimento-card--lula     .depoimento-aspas { color: #1B2D5B; }
+    .depoimento-card--evaristo .depoimento-aspas { color: #3BB554; }
+    .depoimento-card--paes     .depoimento-aspas { color: #F5841F; }
+
+    .depoimento-texto {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+      .depoimentos-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+    }
+
+    /* ── HERO INLINE FORM ── */
+    .hero-form-inline {
+      margin-top: 32px;
+    }
+    .hero-form-fields {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .hero-form-fields input {
+      flex: 1;
+      min-width: 160px;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text);
+      background: rgba(255,255,255,.95);
+      outline: none;
+      transition: box-shadow .2s;
+    }
+    .hero-form-fields input:focus {
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(59,181,84,.5);
+    }
+    .btn-hero-submit {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity .2s, transform .2s;
+      animation: pulse-btn 2.6s infinite;
+    }
+    .btn-hero-submit:hover { opacity: .88; transform: translateY(-2px); }
+    .hero-form-note {
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,.5);
+    }
+    .hero-success {
+      display: none;
+      margin-top: 24px;
+      background: rgba(59,181,84,.15);
+      border: 1px solid rgba(59,181,84,.4);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .hero-success p { color: rgba(255,255,255,.9); font-size: 0.95rem; }
+    .hero-success strong { color: var(--green); }
+    @media (max-width: 600px) {
+      .hero-form-fields { flex-direction: column; }
+      .btn-hero-submit { width: 100%; padding: 16px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="logo"><img src="wesley_teixeira_logo.png" alt="Wesley Teixeira" /></div>
+    <a href="#apoiar" class="btn-nav">Quero Apoiar</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-dot-grid"></div>
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-tag">Deputado Estadual PSB · ALERJ 2026</span>
+        <h1>Da Periferia<br/>para a <span>ALERJ</span></h1>
+        <p>
+          Essa campanha não é apenas sobre o Wesley. É sobre uma geração que vem da periferia
+          em busca de representação política. Ativistas da Baixada Fluminense, das favelas cariocas,
+          subúrbios e municípios do Rio inteiro — na política para defender direitos e criar oportunidades.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong class="counter" data-target="300" data-suffix="+">300+</strong>
+            <span>Aprovados na universidade</span>
+          </div>
+          <div class="stat">
+            <strong class="counter" data-target="45" data-suffix=" mil">45 mil</strong>
+            <span>Cestas na pandemia</span>
+          </div>
+          <div class="stat">
+            <strong class="counter" data-target="21361" data-suffix="">21.361</strong>
+            <span>Votos em 2022</span>
+          </div>
+        </div>
+        <div class="hero-form-inline">
+          <form id="form-hero" onsubmit="submitForm(event, 'hero')">
+            <div class="hero-form-fields">
+              <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name" />
+              <input type="tel" name="whatsapp" placeholder="WhatsApp (21) 9 0000-0000" required autocomplete="tel" />
+              <button type="submit" class="btn-hero-submit">Quero fazer parte →</button>
+            </div>
+            <p class="hero-form-note">Sem spam. Só o que importa, direto no seu WhatsApp.</p>
+          </form>
+          <div class="hero-success" id="success-hero">
+            <p>✅ <strong>Cadastro realizado!</strong> Obrigado por fazer parte dessa luta. Em breve entraremos em contato.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="hero-photo-crop">
+          <img src="wesley fundo roxo.jpg" alt="Wesley Teixeira" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOBRE WESLEY ── -->
+  <section class="sobre">
+    <div class="section-inner">
+      <div class="sobre-grid">
+        <div class="sobre-text">
+          <span class="section-tag">Quem é Wesley</span>
+          <h2 class="section-title">Ativista que virou candidato.<br/><span>Não o contrário.</span></h2>
+          <p class="section-subtitle" style="margin-bottom: 20px;">
+            Criado no Morro do Sapo, em Duque de Caxias. A legitimidade de Wesley foi construída antes da caneta — não com ela.
+          </p>
+          <p>
+            Wesley Teixeira é negro, evangélico e progressista — uma combinação que a maioria ainda acha impossível.
+            Cresceu na Baixada Fluminense, trancou a universidade por falta de dinheiro e encontrou na luta coletiva
+            o caminho de volta.
+          </p>
+          <p>
+            <strong>Ele não fala sobre a periferia. Ele fala da periferia.</strong> A enchente não é só uma pauta —
+            é a rua onde cresceu. O pré-vestibular não é uma realização — é a solução que criou porque viveu o problema.
+          </p>
+          <p>
+            Sua trajetória une fé e justiça social: usa Mateus 25 e Isaías 58 como referências políticas, constrói pontes
+            entre o evangélico progressista e a esquerda periférica, e nunca termina um discurso só denunciando — sempre
+            aponta uma saída.
+          </p>
+        </div>
+
+        <div class="sobre-conquistas">
+          <div class="conquista-item reveal reveal-d1">
+            <span class="conquista-icon">🎓</span>
+            <div>
+              <strong>Nós em Movimento</strong>
+              <span>Pré-vestibular popular que já aprovou mais de 300 pessoas na universidade</span>
+            </div>
+          </div>
+          <div class="conquista-item reveal reveal-d2">
+            <span class="conquista-icon">✊</span>
+            <div>
+              <strong>Jornadas de Junho</strong>
+              <span>Mobilizador das jornadas de junho em Duque de Caxias</span>
+            </div>
+          </div>
+          <div class="conquista-item reveal reveal-d3">
+            <span class="conquista-icon">🧺</span>
+            <div>
+              <strong>45 mil cestas na pandemia</strong>
+              <span>Coordenou distribuição de alimentos para famílias em vulnerabilidade na crise da COVID-19</span>
+            </div>
+          </div>
+          <div class="conquista-item reveal reveal-d4">
+            <span class="conquista-icon">🏛️</span>
+            <div>
+              <strong>PL de assistência habitacional</strong>
+              <span>Projeto de lei aprovado garantindo direitos para moradores em situação de vulnerabilidade</span>
+            </div>
+          </div>
+          <div class="conquista-item reveal reveal-d5">
+            <span class="conquista-icon">📰</span>
+            <div>
+              <strong>Colunista na Folha de SP</strong>
+              <span>Voz da periferia no jornalismo nacional via PerifaConnection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MANIFESTO ── -->
+  <section class="manifesto reveal">
+    <div class="manifesto-noise"></div>
+    <div class="manifesto-bg-word">PERIFERIA</div>
+    <blockquote>
+      <span class="manifesto-quote-mark">"</span>
+      <p>
+        Não falamos <em>sobre</em> a periferia.<br/>
+        Falamos <em>da</em> periferia.<br/>
+        Com ela. Por ela.
+      </p>
+      <cite>Wesley Teixeira · Deputado Estadual PSB · ALERJ 2026</cite>
+    </blockquote>
+  </section>
+
+  <!-- ── PROPOSTAS ── -->
+  <section class="propostas">
+    <div class="section-inner">
+      <span class="section-tag">Propostas</span>
+      <h2 class="section-title">O que Wesley vai <span>defender na ALERJ</span></h2>
+      <p class="section-subtitle">
+        Três eixos construídos a partir da vida real da periferia — não de gabinete.
+      </p>
+
+      <div class="propostas-grid">
+        <div class="proposta-card reveal reveal-d1">
+          <div class="proposta-icon">🎓</div>
+          <h3>Universidade do Povo</h3>
+          <ul>
+            <li>Defender e aperfeiçoar a política de Cotas na UERJ</li>
+            <li>Ampliar o acesso e a permanência da juventude periférica na universidade</li>
+            <li>Valorizar os pré-vestibulares populares como tecnologia social</li>
+          </ul>
+        </div>
+        <div class="proposta-card reveal reveal-d2">
+          <div class="proposta-icon">💼</div>
+          <h3>Mundo do Trabalho e Prosperidade</h3>
+          <ul>
+            <li>Fomentar a economia criativa e a cultura da periferia</li>
+            <li>Suporte técnico e financeiro para o empreendedorismo popular</li>
+            <li>Seguridade para trabalhadores por aplicativo</li>
+            <li>Apoiar o fim da escala 6x1</li>
+          </ul>
+        </div>
+        <div class="proposta-card reveal reveal-d3">
+          <div class="proposta-icon">🌿</div>
+          <h3>Cidades Verdes e Seguras</h3>
+          <ul>
+            <li>Combate às enchentes e retomada do PAC Iguaçu</li>
+            <li>Modernização dos trens da Supervia e ramal Vila Inhomirim</li>
+            <li>Combater fuzis, barricadas e traficantes de armas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEPOIMENTOS ── -->
+  <section class="depoimentos">
+    <div class="section-inner">
+      <span class="section-tag">Apoios</span>
+      <h2 class="section-title">Quem acredita nessa <span>luta</span></h2>
+      <p class="section-subtitle">
+        A campanha do Wesley reúne apoiadores de todos os campos — porque a periferia não tem partido, tem necessidade.
+      </p>
+
+      <div class="depoimentos-grid">
+
+        <div class="depoimento-card depoimento-card--lula reveal reveal-d1">
+          <div class="depoimento-foto-wrap">
+            <div class="depoimento-foto-inner">
+              <img src="Fotos de Apoio/Foto_oficial_de_Luiz_Inácio_Lula_da_Silva_(ombros)_denoise.jpg" alt="Luiz Inácio Lula da Silva" />
+            </div>
+          </div>
+          <div class="depoimento-autor-info">
+            <strong>Luiz Inácio Lula da Silva</strong>
+            <span>Presidente da República</span>
+          </div>
+          <div class="depoimento-divider"></div>
+          <div class="depoimento-aspas">"</div>
+          <p class="depoimento-texto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+        <div class="depoimento-card depoimento-card--evaristo reveal reveal-d2">
+          <div class="depoimento-foto-wrap">
+            <div class="depoimento-foto-inner">
+              <img src="Fotos de Apoio/Conceição Evaristo - foto Lucas Seixas.Folhapress 5.jpg" alt="Conceição Evaristo" />
+            </div>
+          </div>
+          <div class="depoimento-autor-info">
+            <strong>Conceição Evaristo</strong>
+            <span>Escritora e Ativista</span>
+          </div>
+          <div class="depoimento-divider"></div>
+          <div class="depoimento-aspas">"</div>
+          <p class="depoimento-texto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <div class="depoimento-card depoimento-card--paes reveal reveal-d3">
+          <div class="depoimento-foto-wrap">
+            <div class="depoimento-foto-inner">
+              <img src="Fotos de Apoio/Eduardo_Paes,_October_2024.jpg" alt="Eduardo Paes" />
+            </div>
+          </div>
+          <div class="depoimento-autor-info">
+            <strong>Eduardo Paes</strong>
+            <span>Ex-Prefeito do Rio de Janeiro</span>
+          </div>
+          <div class="depoimento-divider"></div>
+          <div class="depoimento-aspas">"</div>
+          <p class="depoimento-texto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACOMPANHE ── -->
+  <section class="acompanhe">
+    <div class="acompanhe-inner">
+      <div>
+        <span class="section-tag">Fique por dentro</span>
+        <h2 class="section-title">Acompanhe o trabalho<br/><span>do Wesley</span></h2>
+        <p class="section-subtitle" style="margin-bottom: 0;">
+          Não precisa ser candidato nem militante. Se você acredita numa política feita de dentro da periferia,
+          receba diretamente as novidades do trabalho do Wesley.
+        </p>
+
+        <div class="acompanhe-bullets">
+          <div class="acompanhe-bullet">
+            <div class="acompanhe-bullet-icon">📲</div>
+            <div>
+              <strong>Novidades no WhatsApp</strong>
+              <span>Atualizações diretas sobre ações, pautas e conquistas da campanha</span>
+            </div>
+          </div>
+          <div class="acompanhe-bullet">
+            <div class="acompanhe-bullet-icon">🎙️</div>
+            <div>
+              <strong>Conteúdo exclusivo</strong>
+              <span>Bastidores, posicionamentos e histórias que a grande mídia não conta</span>
+            </div>
+          </div>
+          <div class="acompanhe-bullet">
+            <div class="acompanhe-bullet-icon">🗺️</div>
+            <div>
+              <strong>Agenda e eventos</strong>
+              <span>Saiba quando o Wesley estará perto de você — plenárias, aulões e muito mais</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acompanhe-form-card">
+        <h3>É simples assim</h3>
+        <p>Nome e WhatsApp. Menos de 30 segundos. Você começa a receber novidades hoje.</p>
+        <form id="form-acompanhe" onsubmit="submitForm(event, 'acompanhe')">
+          <div class="form-group">
+            <label for="nome-acompanhe">Nome *</label>
+            <input type="text" id="nome-acompanhe" name="nome" placeholder="Seu nome" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="whatsapp-acompanhe">WhatsApp *</label>
+            <input type="tel" id="whatsapp-acompanhe" name="whatsapp" placeholder="(21) 9 0000-0000" required autocomplete="tel" />
+          </div>
+          <button type="submit" class="btn-submit-green">Quero receber novidades →</button>
+          <p class="form-note">Sem spam. Você pode sair quando quiser.</p>
+        </form>
+        <div class="success-msg" id="success-acompanhe">
+          <div class="check-big">✅</div>
+          <h3>Pronto!</h3>
+          <p>Em breve você vai receber novidades direto pelo WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INSTAGRAM ── -->
+  <section class="instagram reveal">
+    <div class="instagram-glow"></div>
+    <div class="instagram-inner">
+
+      <a href="https://www.instagram.com/wesleyteixeiras/" target="_blank" rel="noopener" class="ig-profile-pic">
+        <img src="wesley fundo roxo.jpg" alt="Wesley Teixeira" />
+      </a>
+
+      <div class="instagram-header">
+        <div class="ig-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/>
+          </svg>
+        </div>
+        <span class="section-tag">Instagram</span>
+      </div>
+
+      <h2 class="instagram-title">Bastidores, posicionamentos<br/>e <span>a voz da periferia</span> todo dia.</h2>
+
+      <div class="instagram-handle-row">
+        <span class="instagram-handle">Siga em <strong>@wesleyteixeiras</strong></span>
+        <span class="ig-badge">Perfil Público</span>
+      </div>
+
+      <div class="instagram-grid">
+        <div class="ig-card">
+          <div class="ig-card-tag">Bastidores</div>
+          <span class="ig-card-emoji">🎙️</span>
+          <h4>Discursos e posicionamentos</h4>
+          <p>Vídeos direto das plenárias, eventos e mobilizações. A política real, sem filtro.</p>
+          <div class="ig-card-footer">
+            <span class="ig-card-stat">▶ Reels</span>
+            <span class="ig-card-stat">❤️ Engajamento</span>
+          </div>
+        </div>
+        <div class="ig-card">
+          <div class="ig-card-tag">Território</div>
+          <span class="ig-card-emoji">🏙️</span>
+          <h4>Da Baixada para o Rio inteiro</h4>
+          <p>Ações, visitas comunitárias e o trabalho de quem veio do Morro do Sapo e não esqueceu.</p>
+          <div class="ig-card-footer">
+            <span class="ig-card-stat">📸 Fotos</span>
+            <span class="ig-card-stat">🗺️ Localidade</span>
+          </div>
+        </div>
+        <div class="ig-card">
+          <div class="ig-card-tag">Campanha</div>
+          <span class="ig-card-emoji">✊</span>
+          <h4>30 mil votos em 2026</h4>
+          <p>Acompanhe a construção da campanha, os apoiadores e os momentos que fazem história.</p>
+          <div class="ig-card-footer">
+            <span class="ig-card-stat">📲 Stories</span>
+            <span class="ig-card-stat">🔔 Novidades</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="instagram-cta">
+        <a href="https://www.instagram.com/wesleyteixeiras/" target="_blank" rel="noopener" class="btn-instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none"/>
+          </svg>
+          Seguir @wesleyteixeiras
+        </a>
+        <span class="instagram-cta-note">Atualizações diárias sobre a campanha e o trabalho do Wesley</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── COMO CONTRIBUIR ── -->
+  <section class="contribuir">
+    <div class="section-inner">
+      <span class="section-tag" style="background:rgba(255,255,255,.15);color:#fff;">Sou Apoiador</span>
+      <h2 class="section-title">Como posso contribuir?</h2>
+      <p class="section-subtitle">
+        Essa campanha se faz com gente. Escolha como você quer fazer parte.
+      </p>
+
+      <div class="contribuir-grid">
+        <div class="contribuir-item">
+          <div class="contribuir-num">1</div>
+          <div>
+            <strong>Militância Digital</strong>
+            <p>Lista de transmissão do WhatsApp e amplificação nas redes sociais</p>
+          </div>
+        </div>
+        <div class="contribuir-item">
+          <div class="contribuir-num">2</div>
+          <div>
+            <strong>Comícios Caseiros</strong>
+            <p>Articulação de novos apoiadores a partir da sua rede de contatos</p>
+          </div>
+        </div>
+        <div class="contribuir-item">
+          <div class="contribuir-num">3</div>
+          <div>
+            <strong>Plenárias</strong>
+            <p>Participar dos encontros territoriais e temáticos da campanha</p>
+          </div>
+        </div>
+        <div class="contribuir-item">
+          <div class="contribuir-num">4</div>
+          <div>
+            <strong>Voluntariado</strong>
+            <p>Coordenação de voluntários, reuniões e ações de rua</p>
+          </div>
+        </div>
+        <div class="contribuir-item">
+          <div class="contribuir-num">5</div>
+          <div>
+            <strong>Pré-Vestibular</strong>
+            <p>Professores voluntários para os núcleos populares da rede</p>
+          </div>
+        </div>
+        <div class="contribuir-item">
+          <div class="contribuir-num">6</div>
+          <div>
+            <strong>Doação de Campanha</strong>
+            <p>Contribuição financeira para fortalecer a campanha</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FORMULÁRIO COMPLETO ── -->
+  <section class="form-section" id="apoiar">
+    <div class="section-inner" style="text-align:center;">
+      <span class="section-tag">Faça Parte</span>
+      <h2 class="section-title">Vamos juntos?</h2>
+      <p class="section-subtitle" style="margin: 0 auto 0;">
+        Deixe seus dados e nos conte como quer contribuir. A campanha que muda o Rio começa com você.
+      </p>
+    </div>
+
+    <div class="form-full">
+      <h3>Cadastro de Apoiador</h3>
+      <p>Preencha o formulário e entraremos em contato.</p>
+
+      <form id="form-full" onsubmit="submitForm(event, 'full')">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome-full">Nome completo *</label>
+            <input type="text" id="nome-full" name="nome" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label for="email-full">E-mail *</label>
+            <input type="email" id="email-full" name="email" placeholder="seu@email.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="whatsapp-full">WhatsApp *</label>
+            <input type="tel" id="whatsapp-full" name="whatsapp" placeholder="(21) 9 0000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="bairro-full">Bairro / Cidade *</label>
+            <input type="text" id="bairro-full" name="bairro" placeholder="Ex: Duque de Caxias" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="check-item" style="align-items: flex-start; gap: 12px; cursor: pointer;">
+            <input type="checkbox" name="contribuicao" value="Quero contribuir" style="margin-top: 3px; accent-color: var(--green); width: 18px; height: 18px; flex-shrink: 0; cursor: pointer;" />
+            <span style="font-size: 0.9rem; color: var(--text); line-height: 1.5;">
+              Quero me engajar e contribuir para a campanha — a equipe do Wesley entrará em contato com mais informações.
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-submit">Quero fazer parte! →</button>
+        <p class="form-note">Seus dados não serão compartilhados com terceiros.</p>
+      </form>
+
+      <div class="success-msg" id="success-full">
+        <div class="check-big">✅</div>
+        <h3>Cadastro realizado!</h3>
+        <p>Obrigado por fazer parte dessa luta. Em breve entraremos em contato.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p><strong>Wesley Teixeira</strong> · Deputado Estadual PSB · ALERJ 2026</p>
+    <p style="margin-top:6px;">Da Periferia para a ALERJ · Rio de Janeiro</p>
+  </footer>
+
+  <script>
+    // ─────────────────────────────────────────────────────────────
+    // CONFIGURAÇÃO DO GOOGLE SHEETS
+    //
+    // Passo 1: Crie uma planilha no Google Sheets
+    // Passo 2: Vá em Extensões > Apps Script e cole o código abaixo:
+    //
+    // function doPost(e) {
+    //   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    //   var data = JSON.parse(e.postData.contents);
+    //   sheet.appendRow([
+    //     new Date(),
+    //     data.nome,
+    //     data.email,
+    //     data.whatsapp,
+    //     data.bairro,
+    //     data.contribuicoes,
+    //     data.origem
+    //   ]);
+    //   return ContentService
+    //     .createTextOutput(JSON.stringify({ result: 'success' }))
+    //     .setMimeType(ContentService.MimeType.JSON);
+    // }
+    //
+    // Passo 3: Implante como "Aplicativo da Web" (acesso: qualquer pessoa)
+    // Passo 4: Copie a URL gerada e cole abaixo em APPS_SCRIPT_URL
+    // ─────────────────────────────────────────────────────────────
+
+    const APPS_SCRIPT_URL = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT';
+
+    function submitForm(event, origem) {
+      event.preventDefault();
+      const form = event.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      const contribuicoes = [...form.querySelectorAll('input[name="contribuicao"]:checked')]
+        .map(el => el.value).join(', ') || 'Não informado';
+
+      const origemLabels = {
+        hero: 'Formulário Hero',
+        acompanhe: 'Formulário Acompanhe',
+        full: 'Formulário Principal'
+      };
+
+      const payload = {
+        nome: form.nome?.value || '',
+        email: form.email?.value || '',
+        whatsapp: form.whatsapp?.value || '',
+        bairro: form.bairro?.value || '',
+        contribuicoes,
+        origem: origemLabels[origem] || 'Desconhecido'
+      };
+
+      // Se URL não configurada, mostra sucesso local (modo demonstração)
+      if (APPS_SCRIPT_URL === 'COLE_AQUI_A_URL_DO_APPS_SCRIPT') {
+        setTimeout(() => showSuccess(form, origem), 800);
+        return;
+      }
+
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      })
+        .then(() => showSuccess(form, origem))
+        .catch(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        });
+    }
+
+    function showSuccess(form, origem) {
+      form.style.display = 'none';
+      document.getElementById('success-' + origem).style.display = 'block';
+    }
+
+    // ── TYPEWRITER NO HERO TAG ──
+    (function() {
+      const tag = document.querySelector('.hero-tag');
+      const full = tag.textContent.trim();
+      tag.textContent = '';
+      let i = 0;
+      function type() {
+        if (i < full.length) { tag.textContent += full[i++]; setTimeout(type, 48); }
+        else { tag.classList.add('typed'); }
+      }
+      setTimeout(type, 500);
+    })();
+
+    // ── SCROLL PROGRESS BAR ──
+    const progressBar = document.getElementById('progress-bar');
+    const navEl = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressBar.style.width = (scrollTop / total * 100) + '%';
+      navEl.classList.toggle('scrolled', scrollTop > 40);
+    });
+
+    // ── REVEAL ON SCROLL ──
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── ANIMATED COUNTERS ──
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1600;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(target * eased).toLocaleString('pt-BR') + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !e.target.dataset.counted) {
+          e.target.dataset.counted = '1';
+          animateCounter(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+    // ── BONEQUINHOS ANIMADOS ──
+    const canvas = document.getElementById('hero-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, figures;
+
+    // Posição do mouse (começa no centro)
+    const mouse = { x: null, y: null };
+    const heroSection = document.querySelector('.hero');
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    heroSection.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    function initCanvas() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+      figures = Array.from({ length: 90 }, () => {
+        const colors = ['#3BB554', '#F5841F', '#ffffff', '#a8e6b4'];
+        return {
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          size: Math.random() * 5 + 8,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: Math.random() * 0.45 + 0.35,
+          phase: Math.random() * Math.PI * 2
+        };
+      });
+    }
+    initCanvas();
+    window.addEventListener('resize', initCanvas);
+
+    function drawFigure(f, t) {
+      const { x, y, size, color, alpha, phase } = f;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = Math.max(0.9, size / 9);
+      ctx.lineCap = 'round';
+
+      const hr = size * 0.18;
+      const bh = size * 0.30;
+      const lh = size * 0.26;
+      const aw = size * 0.22;
+      const walk = Math.sin(t * 2.5 + phase) * 0.35;
+
+      // Cabeça
+      ctx.beginPath();
+      ctx.arc(x, y, hr, 0, Math.PI * 2);
+      ctx.stroke();
+      // Corpo
+      ctx.beginPath();
+      ctx.moveTo(x, y + hr);
+      ctx.lineTo(x, y + hr + bh);
+      ctx.stroke();
+      // Braços (balançam)
+      ctx.beginPath();
+      ctx.moveTo(x - aw, y + hr + bh * 0.35 + walk * aw * 0.8);
+      ctx.lineTo(x + aw, y + hr + bh * 0.35 - walk * aw * 0.8);
+      ctx.stroke();
+      // Perna esquerda
+      ctx.beginPath();
+      ctx.moveTo(x, y + hr + bh);
+      ctx.lineTo(x - aw * 0.6 + walk * lh * 0.7, y + hr + bh + lh);
+      ctx.stroke();
+      // Perna direita
+      ctx.beginPath();
+      ctx.moveTo(x, y + hr + bh);
+      ctx.lineTo(x + aw * 0.6 - walk * lh * 0.7, y + hr + bh + lh);
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    function animate(timestamp) {
+      const t = timestamp / 1000;
+      ctx.clearRect(0, 0, W, H);
+
+      // Alvo: mouse se disponível, senão centro
+      const cx = mouse.x !== null ? mouse.x : W * 0.38;
+      const cy = mouse.y !== null ? mouse.y : H * 0.55;
+
+      figures.forEach((f, i) => {
+        // Atração fraca ao mouse (arrasto)
+        const dx = cx - f.x;
+        const dy = cy - f.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        // Só atrai se mouse estiver presente e bonequinho não estiver muito perto
+        if (mouse.x !== null && dist > 40) {
+          const pull = Math.min(dist / 900, 0.018);
+          f.vx += dx * pull * 0.012;
+          f.vy += dy * pull * 0.012;
+        }
+
+        // Repulsão entre bonequinhos — evita aglomeração
+        for (let j = i + 1; j < figures.length; j++) {
+          const b = figures[j];
+          const ex = f.x - b.x;
+          const ey = f.y - b.y;
+          const ed = Math.sqrt(ex * ex + ey * ey) || 1;
+          if (ed < 30) {
+            const force = (30 - ed) / 30 * 0.35;
+            f.vx += (ex / ed) * force;
+            f.vy += (ey / ed) * force;
+            b.vx -= (ex / ed) * force;
+            b.vy -= (ey / ed) * force;
+          }
+        }
+
+        // Movimento próprio mais intenso — cada um tem personalidade
+        f.vx += (Math.random() - 0.5) * 0.18;
+        f.vy += (Math.random() - 0.5) * 0.18;
+
+        // Amortecimento (arrasto)
+        f.vx *= 0.92;
+        f.vy *= 0.92;
+
+        // Velocidade mínima — nunca ficam parados
+        const spd = Math.sqrt(f.vx * f.vx + f.vy * f.vy);
+        if (spd < 0.3) {
+          const angle = Math.random() * Math.PI * 2;
+          f.vx += Math.cos(angle) * 0.4;
+          f.vy += Math.sin(angle) * 0.4;
+        }
+        // Velocidade máxima
+        if (spd > 2.2) { f.vx = f.vx / spd * 2.2; f.vy = f.vy / spd * 2.2; }
+
+        f.x += f.vx;
+        f.y += f.vy;
+
+        // Ricochete nas bordas
+        if (f.x < 5)     { f.x = 5;     f.vx = Math.abs(f.vx) * 0.8; }
+        if (f.x > W - 5) { f.x = W - 5; f.vx = -Math.abs(f.vx) * 0.8; }
+        if (f.y < 5)     { f.y = 5;     f.vy = Math.abs(f.vy) * 0.8; }
+        if (f.y > H - 5) { f.y = H - 5; f.vy = -Math.abs(f.vy) * 0.8; }
+
+        drawFigure(f, t);
+      });
+
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+
+    // Máscara de telefone
+    document.querySelectorAll('input[type="tel"]').forEach(input => {
+      input.addEventListener('input', function () {
+        let v = this.value.replace(/\D/g, '').slice(0, 11);
+        if (v.length >= 7) {
+          v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+        } else if (v.length >= 3) {
+          v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+        }
+        this.value = v;
+      });
+    });
+  </script>
+
+</body>
+</html>
