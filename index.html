@@ -1945,7 +1945,8 @@
 
       fetch(APPS_SCRIPT_URL, {
         method: 'POST',
-        body: JSON.stringify(payload)
+        mode: 'no-cors',
+        body: new URLSearchParams(payload)
       })
         .then(() => showSuccess(form, origem))
         .catch(() => {
